@@ -31,7 +31,7 @@ GitHubを使う主なメリットは次のとおりです。
 1. [GitHub](https://github.com/)でアカウントを作成し、サインインする
 2. [Git公式サイト](https://git-scm.com/downloads)からGitをインストールする
 3. [Visual Studio Code公式サイト](https://code.visualstudio.com/)からVS Codeをインストールする
-4. GitHub上で練習用リポジトリを用意し、PCへクローンする
+4. 講義用リポジトリをPCへクローンする
 
 インストール後、VS Codeでターミナルを開き、次のコマンドでGitが利用できることを確認します。
 
@@ -45,6 +45,16 @@ git --version
 git config --global user.name "あなたの名前"
 git config --global user.email "あなたのメールアドレス"
 ```
+
+続いて、ターミナルで次のコマンドを実行し、講義用リポジトリをクローンします。
+
+```powershell
+git clone https://github.com/shuhei0720/recture-github.git
+cd recture-github
+code .
+```
+
+> **講師向けメモ:** このリポジトリへブランチをプッシュする受講生は、事前にリポジトリのCollaboratorとして追加しておく必要があります。書き込み権限を付与しない場合は、各受講生がリポジトリをForkしてから、自分のForkをクローンしてください。
 
 ## VS CodeでGitHubを操作する
 
@@ -110,13 +120,13 @@ VSCodeを開いてください。
 
 ![alt text](./img/image70.png)
 
-すると、ブランチの名前を入力する画面が出てくるので、「test-branch」と入力してエンターを押しましょう。
+するとブランチ名の入力画面が表示されます。ほかの受講生と重複しないように、`自分のGitHubユーザー名-practice`（例: `shuhei0720-practice`）と入力してEnterキーを押しましょう。
 
-すると、先ほどまで「main」だったところが「test-branch」に変わります。現在値が「test-branch」であることを示しています。
+画面に表示されていたブランチ名が`main`から作成したブランチ名に変われば、ブランチの作成と切り替えは完了です。
 
 ![alt text](./img/image72.png)
 
-そしたら、新しく「test.txt」というファイルを追加します。
+次に、ほかの受講生とファイル名が重複しないように、`自分のGitHubユーザー名.txt`（例: `shuhei0720.txt`）というファイルを追加します。ファイルには、講義で学んだことを1行入力して保存しましょう。
 
 ![alt text](./img/image73.png)
 
@@ -128,7 +138,7 @@ Github拡張機能に戻ると、「変更」欄に追加したファイルが�
 
 ![alt text](./img/image74.png)
 
-すると、「test-branch」が進んだことがわかります。「main」を離れてブランチが進んでいることがわかります。
+すると、作成した作業用ブランチが進んだことがわかります。`main`から分岐して変更履歴が追加されています。
 
 ![alt text](./img/image75.png)
 
@@ -148,7 +158,7 @@ Github拡張機能に戻ると、「変更」欄に追加したファイルが�
 
 #### プルリクエスト、マージ
 
-ここまでできたら、ブラウザでGitHubのあなたの「alz-mgnt」リポジトリに移動しましょう。
+ここまでできたら、ブラウザで講義用の[recture-githubリポジトリ](https://github.com/shuhei0720/recture-github)に移動しましょう。
 
 すると、リモートにブランチを発行したので、プルリクエストの作成ボタンが出ています。ボタンを押してみましょう。
 
